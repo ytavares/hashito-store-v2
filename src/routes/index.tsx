@@ -37,8 +37,10 @@ const steps = [
 function Home() {
   const { totalItems } = useCart();
   const [category, setCategory] = useState("Todos");
-  const filtered =
-    category === "Todos" ? products : products.filter((p) => p.category === category);
+  let filtered: typeof products;
+  if (category === "Todos") filtered = products;
+  else if (category === "Destaques") filtered = products.filter((p) => p.featured);
+  else filtered = products.filter((p) => p.category === category);
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-rosa-soft">
