@@ -1,0 +1,1 @@
+# hashito-store-v2
