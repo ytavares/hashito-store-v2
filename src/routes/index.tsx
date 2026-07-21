@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Minus, Plus, ShoppingBag } from "lucide-react";
 import heroImg from "@/assets/hero-hashito.jpg";
+import logoImg from "@/assets/logo.png";
 import { products, categories, formatBRL, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 import { STORE } from "@/config";
@@ -133,7 +134,7 @@ function Home() {
               Como funciona a encomenda
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-12 card-test">
             {steps.map((s) => (
               <div key={s.n} className="flex gap-5">
                 <span className="font-serif text-3xl text-rosa/50 shrink-0 leading-none">
@@ -270,12 +271,19 @@ function TopBar({ totalItems }: { totalItems: number }) {
   return (
     <div className="sticky top-0 z-40 bg-background/80 backdrop-blur border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-serif text-xl tracking-tight cursor-pointer">
-          Hashito <span className="text-rosa italic">Store</span>
+        <Link to="/" className="flex items-center gap-2 cursor-pointer">
+          <img src={logoImg} alt="Hashito Store" className="h-8 w-auto" />
+          <span className="font-serif text-xl tracking-tight">
+            Hashito <span className="text-rosa italic">Store</span>
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm">
-          <a href="#catalogo" className="hover:text-rosa transition cursor-pointer">Catálogo</a>
-          <a href="#como-funciona" className="hover:text-rosa transition cursor-pointer">Como funciona</a>
+          <a href="#catalogo" className="hover:text-rosa transition cursor-pointer">
+            Catálogo
+          </a>
+          <a href="#como-funciona" className="hover:text-rosa transition cursor-pointer">
+            Como funciona
+          </a>
         </nav>
         <Link
           to="/carrinho"
@@ -297,7 +305,12 @@ function TopBar({ totalItems }: { totalItems: number }) {
 function Footer() {
   return (
     <footer className="py-12 px-6 bg-secondary/40 border-t border-border text-center">
-      <p className="font-serif text-lg mb-2">Hashito Store</p>
+      <div className="flex items-center justify-center gap-2 mb-2">
+        <img src={logoImg} alt="Hashito Store" className="h-10 w-auto" />
+        <span className="font-serif text-lg">
+          Hashito <span className="text-rosa italic">Store</span>
+        </span>
+      </div>
       <p className="text-xs text-muted-foreground tracking-wide">
         © {new Date().getFullYear()} · Papelaria afetiva & artesanal · {STORE.hours}
       </p>

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import logoImg from "@/assets/logo.png";
 import { ArrowLeft, Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { formatBRL } from "@/lib/products";
@@ -50,8 +51,11 @@ function CartPage() {
             <ArrowLeft className="h-4 w-4" />
             Continuar comprando
           </Link>
-          <Link to="/" className="font-serif text-lg cursor-pointer">
-            Hashito <span className="text-rosa italic">Store</span>
+          <Link to="/" className="flex items-center gap-2 cursor-pointer">
+            <img src={logoImg} alt="Hashito Store" className="h-8 w-auto" />
+            <span className="font-serif text-lg">
+              Hashito <span className="text-rosa italic">Store</span>
+            </span>
           </Link>
         </div>
       </div>

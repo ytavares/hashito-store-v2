@@ -131,7 +131,15 @@ export const products: Product[] = [
   },
 ];
 
-export const categories = ["Todos", "Destaques", "Cadernos", "Planners", "Convites", "Lembrancinhas", "Casamento"];
+export const categories = [
+  "Todos",
+  "Destaques",
+  "Cadernos",
+  "Planners",
+  "Convites",
+  "Lembrancinhas",
+  "Casamento",
+];
 
 export const formatBRL = (v: number) =>
   v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
